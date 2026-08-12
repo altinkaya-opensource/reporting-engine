@@ -11,8 +11,7 @@ from contextlib import contextmanager
 from unittest import mock
 
 import pkg_resources
-from PyPDF2 import PdfFileWriter
-from PyPDF2.pdf import PageObject
+from PyPDF2 import PageObject, PdfFileWriter
 
 from odoo import tools
 from odoo.exceptions import ValidationError
