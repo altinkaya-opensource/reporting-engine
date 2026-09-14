@@ -11,7 +11,7 @@ from contextlib import contextmanager
 from unittest import mock
 
 import pkg_resources
-from PyPDF2 import PageObject, PdfFileWriter
+from PyPDF2 import PdfFileWriter
 
 from odoo import tools
 from odoo.exceptions import ValidationError
@@ -101,7 +101,7 @@ class TestReportPy3o(TransactionCase):
         for _i in range(0, 3):
             result = tempfile.mktemp(".txt")
             writer = PdfFileWriter()
-            writer.addPage(PageObject.createBlankPage(width=100, height=100))
+            writer.addBlankPage(width=100, height=100)
             with open(result, "wb") as fp:
                 writer.write(fp)
             reports_path.append(result)
